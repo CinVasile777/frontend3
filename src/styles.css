@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: linear-gradient(rgba(234, 236, 245, 0.9),rgba(94, 109, 125, 0.9)) ,url('https://img.freepik.com/free-vector/islamic-ornament-vector_67317-112.jpg');
+    
+}
