@@ -1,0 +1,16 @@
+#carouselExampleIndicators{
+    margin-top: 350px;
+    margin-left: 8%;
+}
+
+.carousel-inner{
+  width: 1600px;
+  height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-item img{
+  width: 1200px;
+  height: 600px;
+}

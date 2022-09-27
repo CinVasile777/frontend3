@@ -1,0 +1,61 @@
+<div style="margin-top: 200px;">
+    <div style="margin-top: 70px;margin-left: 70px;">
+        <div style="display: flex;">
+            <h1>My</h1>
+            <h1 style="margin-left: 10px;color:rgba(210, 107, 23, 0.5) ;">Cart</h1>
+        </div>
+    </div>    
+    <div style="display: flex;justify-content: space-evenly;">
+        <div style="margin-top: 70px;" >
+            <table  class="table table-bordered" style="text-align: center" *ngIf="products.length > 0" >
+                <thead>
+                    <tr>
+                        <th>Product image</th>
+                        <th>Code</th>
+                        <th>name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color: rgb(192, 209, 215)" *ngFor="let product of products">
+                    <tr > 
+                        <td >
+                            <img src="{{product.firstImage}}" style="height: 75px;width:55px;margin-top: 10px"> 
+                        </td>
+                        <td>
+                            <p style="color: rgb(171, 170, 170);margin-top: 25px">{{product.id}}</p>
+                        </td>
+                        <td>
+                            <h6 style="margin-top: 30px;">{{product.name}}</h6>
+                        </td>
+                        
+                        <div style="display: flex;">
+                            <button pButton type="button"icon="pi pi-minus" class="p-button-rounded p-button-warning"  (click)="decrement(product)" style="margin: 25px;"></button>
+                            <div style="margin-top:25px">{{product.quantity}}</div>
+                            <button pButton type="button" icon="pi pi-plus" class="p-button-rounded p-button-warning"  (click)="increment(product)"style="margin: 25px;"></button>
+                        </div>
+                    
+                        <td>
+                            <h4 class="product" style="margin-top: 25px;">{{product.price * product.quantity | currency: 'RON '}}</h4>
+                        </td>
+                        <td>
+                            <button pButton icon="pi pi-times" style="margin-top: 20px;" type="button" class="p-button-rounded p-button-danger p-button-outlined" (click)="delete(product.id)"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div *ngIf="products.length == 0"  role="alert" style="height: 5%;margin-left: 0%;margin-top: 70px;text-align: center;">
+            <h4>You have no items in your shopping cart</h4>
+        </div>
+        <div style="margin-top: 70px;">
+            <div style="border:2px solid gray;border-radius: 25px;padding: 30px;margin-bottom: 20px;">
+                <h2>Order Summary</h2><hr>
+                <h5 >Valoare comandă: {{totalPrice}}</h5>
+                <h5>Livare: </h5>
+                <h5>Total: {{totalPrice | currency: 'RON ' }}</h5>
+            </div>
+            <button pButton type="button" class="p-button-rounded p-button-warning" routerLink="/myOrder">complete the order</button> 
+        </div>
+    </div>
+</div>

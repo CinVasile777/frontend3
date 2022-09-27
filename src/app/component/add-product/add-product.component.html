@@ -1,0 +1,59 @@
+
+<div class="container" style="padding-top: 70px;margin-bottom: 70px;margin-top: 150px;">
+    <form [formGroup]="productForm" (ngSubmit)="submitProduct()">
+        <div style="display: flex;">
+            <h1>Create</h1>
+            <h1 style="margin-left: 10px;color:rgba(210, 107, 23, 0.5) ;">Product</h1>
+        </div><br><br>
+        <div *ngIf="formMessage !=''">
+            <p class="alert alert-info" role="alert">{{formMessage}}</p>
+        </div>
+        <div style="margin-left: -100px;margin-bottom: -100px;">
+            <button pButton type="submit" class="p-button-rounded p-button-warning" >Save</button><br><br>
+            <button pButton type="button" class="p-button-rounded p-button-info" routerLink="/admin">Back</button>
+        </div>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['firstImage'].dirty && productForm.hasError('required','firstImage')">First image is required</span>
+            <input id="firstImage" class="form-control" type="text" formControlName="firstImage" required pInputText> 
+            <label for="firstImage"class="form-label" >First Image</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <input id="secondImage" class="form-control" type="text" formControlName="secondImage"  pInputText> 
+            <label for="secondImage"class="form-label" >Second Image</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <input id="lastImage" class="form-control" type="text" formControlName="lastImage" pInputText> 
+            <label for="lastImage"class="form-label" >Last Image</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['name'].dirty && productForm.hasError('required','name')">Name is required</span>
+            <input id="name" class="form-control" type="text" formControlName="name" required pInputText> 
+            <label for="name"class="form-label" >Name</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['price'].dirty && productForm.hasError('required','price')">Price is required</span>
+            <input id="price" class="form-control" type="text" formControlName="price" required pInputText> 
+            <label for="price"class="form-label" >Price</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['brand'].dirty && productForm.hasError('required','brand')">Brand is required</span>
+            <input id="brand" class="form-control" type="text" formControlName="brand" required pInputText> 
+            <label for="brand"class="form-label" >Brand</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['belt'].dirty && productForm.hasError('required','belt')">Belt is required</span>
+            <input id="belt" class="form-control" type="text" formControlName="belt" required pInputText> 
+            <label for="belt"class="form-label" >Belt</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['gender'].dirty && productForm.hasError('required','gender')">Gender is required</span>
+            <input id="gender" class="form-control" type="text" formControlName="gender" required pInputText> 
+            <label for="gender"class="form-label" >Gender</label>
+        </span><br><br>
+        <span class="p-float-label p-input-filled">
+            <span class="text-danger" *ngIf="productForm.controls['battery'].dirty && productForm.hasError('battery','firstImage')">Battery is required</span>
+            <input id="battery" class="form-control" type="text" formControlName="battery" required pInputText> 
+            <label for="battery"class="form-label" >Battery</label>
+        </span><br><br>
+    </form>
+</div>

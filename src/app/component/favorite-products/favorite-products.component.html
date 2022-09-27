@@ -1,0 +1,21 @@
+
+<div style="padding: 3%;margin-top: 170px;">
+    <div style="display: flex;margin-left: 70px;margin-bottom: 70px;">
+        <h1>Your favorite</h1>
+        <h1 style="margin-left: 10px;color:rgba(210, 107, 23, 0.5) ">products</h1>
+    </div>
+    <div *ngIf="favoriteProducts.length == 0" class="alert alert-info col-md-12" role="alert" style="width:20%;height: 5%;margin-left: 5%;margin-top: 70px;text-align: center;">
+        <h4>You have no favorites</h4>
+    </div>
+    <div *ngFor="let product of favoriteProducts" style="margin-top: 70px;width: 50%;">
+       
+        <div style="display: flex;justify-content: space-evenly;flex-wrap: wrap;" class="myFavoriteProduct">
+            <img src="{{product.firstImage}}" style="height:150px; width:110px ;padding: 10px;"> 
+            <p style="color: rgb(171, 170, 170);margin-top: 60px;padding: 10px;">{{product.id}}</p>
+            <h6 style="margin-top: 60px;padding: 10px;">{{product.name}}</h6>
+            <h4 class="product" style="margin-top: 60px;padding: 10px;">{{product.price}} RON</h4>
+            <button pButton type="submit" class="p-button-rounded p-button-warning"  (click)="addToCart(product)" style="margin-top: 60px;height: 50px;">add to cart</button>
+            <button pButton icon="pi pi-times" style="margin-top: 65px;padding: 10px;" type="button" class="p-button-rounded p-button-danger p-button-outlined" (click)="deleteFavoriteProduct(product.id)"></button>
+        </div>
+    </div>
+</div>

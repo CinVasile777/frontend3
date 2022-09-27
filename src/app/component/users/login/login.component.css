@@ -1,0 +1,14 @@
+.card{
+    margin-left: 70%;
+    border: none;
+    width: 450px;
+    padding: 40px;
+    background: linear-gradient(90deg,rgb(248, 239, 239)0%, rgb(223, 223, 223)100%);
+}
+
+span{margin-bottom: 20px;}
+
+.container{
+    margin-top: 200px;
+   
+}

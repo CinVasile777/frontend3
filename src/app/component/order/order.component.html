@@ -1,0 +1,98 @@
+<div style="margin-left: 7%;margin-top: 200px;">
+    
+    <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+        <div style="display: flex;flex-wrap: wrap;">
+            <h1 style="margin-left: 3%;margin-bottom: 3%;">SCRIEȚI DETALIILE LIVRĂRII</h1> 
+            <div style="margin-left: 40%;">
+                <div style="border:2px solid gray;border-radius: 25px;padding: 30px;">
+                    <h2>Order Summary</h2><hr>
+                    <h5 >Valoare comandă: {{subTotalPrice | currency: 'RON ' }}</h5>
+                    <h5>Livare: </h5>
+                    <h5>Total: {{totalPrice | currency: 'RON ' }}</h5>
+                </div><br>
+                <button pButton type="submit" class="p-button-rounded p-button-warning">save the command</button> 
+            </div>
+        </div>
+
+            <div style="margin-left: 3%;display: flex;margin-top: -11%;font-size: 20px">
+            <div class="form-check">
+                <input style="border-radius: 50%;" class="form-check-input" type="checkbox" formControlName="individual" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckDefault"><b>PERSOANĂ FIZICĂ</b></label>
+            </div>
+            <div class="form-check" style="margin-left: 3%">
+                <input style="border-radius: 50%;" class="form-check-input" type="checkbox" formControlName="legalEntity" id="flexCheckDefault" >
+                <label class="form-check-label" for="flexCheckDefault"><b>PERSOANĂ JURIDICĂ</b></label>
+            </div><br> 
+            </div>
+            <div style="margin-left: 3%;margin-top: 2%;">
+            <div style="display: flex;margin-bottom: 3%;">
+                <span class="p-float-label p-input-filled">
+                    <span class="text-danger" *ngIf="orderForm.controls['firstName'].dirty && orderForm.hasError('required','firstName')">First name is required</span>
+                    <input id="firstname" class="form-control" type="text" formControlName="firstName" required pInputText> 
+                    <label for="firstname"class="form-label" >Nume</label>
+                </span>
+                <span class="p-float-label p-input-filled" style="margin-left: 3%">
+                    <span class="text-danger" *ngIf="orderForm.controls['lastName'].dirty && orderForm.hasError('required','lastName')">Last name is required</span>
+                    <input id="lastName" class="form-control" type="text" formControlName="lastName" required pInputText> 
+                    <label for="lastName" class="form-label">Nume de familie</label>
+                </span>
+            </div>
+            <div style="display: flex;margin-bottom: 3%;">
+                <span class="p-float-label p-input-filled">
+                    <span class="text-danger" *ngIf="orderForm.controls['address'].dirty && orderForm.hasError('required','address')">Address is required</span>
+                    <input id="address" class="form-control" type="text" formControlName="address" required pInputText> 
+                    <label for="address" class="form-label">Adresa</label>
+                </span>
+                <span class="p-float-label p-input-filled" style="margin-left: 3%">
+                    <span class="text-danger" *ngIf="orderForm.controls['postalCode'].dirty && orderForm.hasError('required','postalCode')">Postal code is required</span>
+                    <input id="postalCode" class="form-control" type="text" formControlName="postalCode" required pInputText> 
+                    <label for="postalCode" class="form-label">Cod poștal</label>
+                </span>
+            </div>
+            <div style="display: flex;margin-bottom: 3%;">
+                <span class="p-float-label p-input-filled">
+                    <span class="text-danger" *ngIf="orderForm.controls['city'].dirty && orderForm.hasError('required','city')">City is required</span>
+                    <input id="city" class="form-control" type="text" formControlName="city" required pInputText> 
+                    <label for="city" class="form-label">Localitate</label>
+                </span>
+                <span class="p-float-label p-input-filled" style="margin-left: 3%">
+                    <span class="text-danger" *ngIf="orderForm.controls['county'].dirty && orderForm.hasError('required','county')">County is required</span>
+                    <input id="county" class="form-control" type="text" formControlName="county" required pInputText> 
+                    <label for="county" class="form-label">Județ</label>
+                </span>
+                <!-- <span style="margin-left: 3%">
+                    <p-dropdown [options]="County" type="text" [(ngModel)]="selectedCounty1" class="p-float-label p-input-filled" placeholder="Județ" optionLabel="name" formControlName="county" [showClear]="true"></p-dropdown>
+                </span> -->
+                <div class="form-check" style="margin-left: 2%;margin-right:2%;font-size: 20px">
+                    <input style="border-radius: 50%;" class="form-check-input" type="checkbox" formControlName="courier" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault"><b>PRIN CURIER</b></label>
+                  </div>
+                <div class="form-check" style="font-size: 20px">
+                    <input style="border-radius: 50%;" class="form-check-input" type="checkbox" formControlName="postal" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked"><b>PRIN POȘTĂ</b></label>
+                </div>
+                
+            </div>
+            <div style="display: flex;margin-bottom: 3%;">
+                <span class="p-float-label p-input-filled">
+                    <span class="text-danger" *ngIf="orderForm.controls['email'].dirty && orderForm.hasError('required','email')">Email is required</span>
+                    <input id="email" class="form-control" type="text" formControlName="email" required pInputText> 
+                    <label for="email" class="form-label">Email</label>
+                </span>
+                <span class="p-float-label p-input-filled" style="margin-left: 3%">
+                    <span class="text-danger" *ngIf="orderForm.controls['phone'].dirty && orderForm.hasError('required','phone')">Phone is required</span>
+                    <input id="phone" class="form-control" type="text" formControlName="phone" required pInputText> 
+                    <label for="phone" class="form-label">Nr de telefon</label>
+                </span>
+                <div class="form-check" style="margin-left: 2.4%;font-size: 20px;">
+                    <input style="border-radius: 50%;" class="form-check-input" type="checkbox" formControlName="cashOnDelivery" id="flexCheckChecked">
+                    <label class="form-check-label"  for="flexCheckChecked"><b>PLATA-N RAMBURS</b></label>
+                </div>
+            </div>
+                        
+            </div>
+            <div *ngIf="formMessage !=''" style="width: 20%;text-align: center;">
+                <p class="alert alert-info" role="alert">{{formMessage}}</p>
+            </div> 
+    </form>
+</div>

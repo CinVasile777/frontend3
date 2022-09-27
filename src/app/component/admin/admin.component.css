@@ -1,0 +1,7 @@
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#imgClock{height: 300px;width: 235px;}
+

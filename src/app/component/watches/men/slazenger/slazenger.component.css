@@ -1,0 +1,14 @@
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#imgClock{height: 300px;width: 235px;}
+
+.wholeProduct{padding: 20px;margin-left: 9%;margin-bottom: 30px;}
+.wholeProduct{background-color: rgba(249, 245, 242, 0.5);width: 410px}
+.wholeProduct:hover{background-color: rgba(249, 245, 242, 0.7);margin-top: -4px;}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: rgba(139, 139, 139, 0.5);
+  }

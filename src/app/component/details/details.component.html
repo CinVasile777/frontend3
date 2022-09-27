@@ -1,0 +1,53 @@
+<div *ngIf="product" style="margin-top: 240px;">
+    
+    <div style="justify-content: space-around;display: flex;flex-wrap: wrap;" >
+            <img class="imageDetail"  src="{{product.firstImage}}">
+            <img class="imageDetail"  src="{{product.secondImage}}">
+            <img class="imageDetail"  src="{{product.lastImage}}">
+    </div>
+    <div>
+        <div *ngIf="formMessage !=''">
+            <p  role="alert" class="alert alert-info" style="width: 80px;margin-left: 85%;margin-bottom: -47px;padding: 10px;text-align: center;">{{formMessage}}</p>
+        </div>
+        <div style="text-align:center;margin-top: 20px;">
+            <h3 >{{product.name}}</h3>
+            <p style="color: rgb(226, 10, 10);">{{product.id}}</p>
+            <h4>{{product.price}} RON</h4>
+            <button pButton icon="pi pi-heart" type="button"class="p-button-rounded p-button-danger p-button-outlined p-button-lg" style="border: none;margin: 10px;" (click)="addToFavorites(product)"></button><br>
+            <button pButton class="p-button-rounded p-button-warning" (click)="addToCart(product)">add to cart</button>
+        </div>
+    </div>
+
+    <div style="margin-top: 70PX;margin-bottom: 70PX;margin-left: 15%;">
+        <table class="table table-bordered " style="width:85%;">
+            <thead>
+                <tr>
+                    <th><b>Specificații</b></th>
+                </tr>
+            </thead>
+            <tbody style="background-color: rgb(196, 226, 236);text-align: center;">
+                <tr > 
+                    <td>Marca</td>
+                    <td>{{product.brand}}</td>
+                </tr>
+                <tr > 
+                    <td>Brățară / Curea</td>
+                    <td>{{product.belt}}</td>
+                </tr>
+                <tr > 
+                    <td>Gen</td>
+                    <td>{{product.gender}}</td>
+                </tr>
+                <tr > 
+                    <td>Baterie</td>
+                    <td>{{product.battery}}</td>
+                </tr>
+                <tr > 
+                    <td>Cod model</td>
+                    <td>{{product.modelCode}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

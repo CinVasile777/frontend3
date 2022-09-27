@@ -1,0 +1,9 @@
+.imageDetail{
+    height: 400px;
+    width: 335px;
+    margin-right: 70px;
+    margin-bottom: 20px;
+    border:2px dotted gray;
+    border-radius: 20px;
+    padding: 40px;
+}

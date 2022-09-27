@@ -1,0 +1,28 @@
+
+.navBar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+  ::ng-deep .menucus{
+    /* background: #e7d9d9 !important; */
+    background: #d9dee7 !important;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0.9;
+     
+}
+
+::ng-deep .menucus ul li:nth-child(1):hover {
+    background: white;
+}
+
+::ng-deep .menucus ul li:nth-child(2):hover {
+    background: white;
+}
+::ng-deep .menucus ul li:nth-child(3):hover {
+    background: white;
+}
+

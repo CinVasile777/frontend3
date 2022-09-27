@@ -1,0 +1,19 @@
+export interface Order{
+    id:number;
+    individual:string;
+    legalEntity:string;
+    firstName:string;
+    lastName:string;
+    address:string;
+    postalCode:string;
+    city:string;
+    county:string;
+    courier:string;
+    postal:string;
+    email:string;
+    phone:string;
+    cashOnDelivery:string;
+    orderValue:number;
+    delivery:number;
+    totalPrice:number;
+}

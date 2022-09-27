@@ -1,0 +1,24 @@
+<div >
+    <div style="padding-top: 220px;margin-bottom: 60px;display: flex;justify-content: space-evenly;">
+        <img src="https://www.wallpaperup.com/uploads/wallpapers/2015/10/14/819274/6b030cbd6cfc8bc648ed306f21a3f57b-700.jpg" style="object-fit: cover;margin-bottom: -100px;" height="4%" width="33.5%">
+        <img src="https://media.karousell.com/media/photos/products/2020/03/05/original_rolex_ladies_oyster_perpetual_datejust_26mm_ref_79174_1583420666_654b026b_progressive.jpg" style="object-fit: cover;margin-bottom: -150px;margin-top: -30.4px;" height="4%" width="20.2%">
+        <img src="https://www.wallpaperup.com/uploads/wallpapers/2015/10/14/819274/6b030cbd6cfc8bc648ed306f21a3f57b-700.jpg" style="object-fit: cover;margin-bottom: -100px;" height="4%" width="33.5%">
+    </div>
+    <div style="display: flex;margin-bottom: 70px;flex-wrap: wrap;">
+        <div *ngFor="let product of productsList | paginate: { itemsPerPage: 6, currentPage: p }" class="wholeProduct" >
+            <!-- <div *ngIf="FOSSIL =='all' || product.brand == FOSSIL"> -->
+                <div class="product">
+                    <img src="{{product.firstImage}}" id="imgClock">
+                    <button pButton icon="pi pi-heart" type="button"class="p-button-rounded p-button-danger p-button-outlined p-button-lg" style="border: none;margin-left: 20px;" (click)="addToFavorites(product)"></button>
+                </div><br>
+                <h3 class="product" style="margin-left: 7px">{{product.name}}</h3>
+                <div class="product">
+                    <h4 class="product" style="margin-top: 6px;">{{product.price}} RON</h4>
+                    <button pButton type="button" class="p-button-rounded p-button-info" [routerLink]="['/product/',product.id]" style="margin-bottom:10px">Details</button>
+                </div>
+                <p style="color: rgb(171, 170, 170);" class="product">{{product.modelCode}}</p>
+            <!-- </div> -->
+        </div>
+    </div>
+    <div style="text-align: center;margin-top: -50px;"><pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls></div>
+</div>

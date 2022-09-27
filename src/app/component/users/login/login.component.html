@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div style="display: flex;margin-left: 125px;margin-bottom: 10px;">
+                    <h1><b>Log</b></h1>
+                    <h1 style="color:rgba(210, 107, 23, 0.5) ;"><b>in</b></h1>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+                    <div>
+                        <span class="p-float-label p-input-filled">
+                            <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">Email is required</span>
+                            <input id="email" class="form-control" type="text" formControlName="email" required pInputText> 
+                            <label for="email"class="form-label" >Email</label>
+                        </span>
+                        <span class="p-float-label p-input-filled">
+                            <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">Password is required</span>
+                            <input id="password" class="form-control" type="password" formControlName="password" required pInputText> 
+                            <label for="password"class="form-label" >Password</label>
+                        </span>
+                    </div>
+                    <div style="text-align:center">
+                        <button pButton type="submit" [disabled] = '!this.loginForm.valid' class="p-button-rounded p-button-danger" style="width: 100%;font-size: 20px;"><b style="margin-left:43%">Login</b></button><br><br>
+                        <button pButton type="button" routerLink="/signUp" class="p-button-rounded p-button-warning">New user ? Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

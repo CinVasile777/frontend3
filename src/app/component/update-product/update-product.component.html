@@ -1,0 +1,54 @@
+
+<div class="container" style="padding-top: 70px;margin-bottom: 70px;margin-top: 150px;">
+    <div style="display: flex;">
+            <h1>Edit</h1>
+            <h1 style="margin-left: 10px;color:rgba(210, 107, 23, 0.5) ;">Product</h1>
+    </div><br><br>
+    <form [formGroup]="productForm" (ngSubmit)="submitProduct()">
+        <div *ngIf="formMessage !=''">
+            <p class="alert alert-info" role="alert">{{formMessage}}</p>
+        </div>
+        <div style="margin-left: -10%;margin-bottom: -115px;">
+            <button pButton type="submit"  class="p-button-rounded p-button-warning" >Update</button><br><br>
+            <button pButton type="button" class="p-button-rounded p-button-info" routerLink="/admin">Back</button>
+        </div>
+        <div style="margin: 5px">
+            <span class="p-float-label p-input-filled">
+                <input id="firstImage" class="form-control" type="text" [(ngModel)]="product.firstImage" formControlName="firstImage" required pInputText> 
+                <label for="firstImage"class="form-label" >First Image</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="secondImage" class="form-control" type="text" [(ngModel)]="product.secondImage" formControlName="secondImage" required pInputText> 
+                <label for="secondImage"class="form-label" >Second Image</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="lastImage" class="form-control" type="text" [(ngModel)]="product.lastImage" formControlName="lastImage" pInputText> 
+                <label for="lastImage"class="form-label" >Last Image</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="name" class="form-control" type="text" [(ngModel)]="product.name" formControlName="name" required pInputText> 
+                <label for="name"class="form-label" >Name</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="price" class="form-control" type="text" [(ngModel)]="product.price" formControlName="price" required pInputText> 
+                <label for="price"class="form-label" >Price</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="brand" class="form-control" type="text" [(ngModel)]="product.brand" formControlName="brand" required pInputText> 
+                <label for="brand"class="form-label" >Brand</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="belt" class="form-control" type="text" [(ngModel)]="product.belt" formControlName="belt" required pInputText> 
+                <label for="belt"class="form-label" >Belt</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="gender" class="form-control" type="text" [(ngModel)]="product.gender" formControlName="gender" required pInputText> 
+                <label for="gender"class="form-label" >Gender</label>
+            </span><br><br>
+            <span class="p-float-label p-input-filled">
+                <input id="battery" class="form-control" type="text" [(ngModel)]="product.battery" formControlName="battery" required pInputText> 
+                <label for="battery"class="form-label" >Battery</label>
+            </span><br><br>
+        </div>
+    </form>
+</div>

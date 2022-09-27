@@ -1,0 +1,18 @@
+
+<div class="navBar">
+  <div style="margin-left: 60px;margin-right: 60px;margin-top: 10px;">
+    <div style="display: flex;justify-content: flex-end;padding: 20px;margin-right: 20px;">
+      <button pButton icon="pi pi-user" type="button"class="p-button-rounded p-button-primary p-button-outlined p-button-lg" style="margin-right: 10px;" routerLink="/login"></button>
+      <button pButton icon="pi pi-heart" type="button"class="p-button-rounded p-button-danger p-button-outlined p-button-lg" style="margin-right: 10px;" routerLink="/favoriteProducts"></button>
+      <button pButton icon="pi pi-shopping-cart" type="button"class="p-button-rounded p-button-warning p-button-outlined p-button-lg" routerLink="/mycart"></button>
+    </div>
+  
+    <p-menubar styleClass="menucus"  [autoDisplay]="true" [model]="items">
+      <ng-template pTemplate="start">
+        <a href="/home"><img style="border-radius: 50%;height: 50px;width: 50px;margin-right: 10px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUNit9CtkBzJ0XhBUMfQqY18yuvShmzP_7Gg&usqp=CAU"></a>
+    </ng-template>
+    </p-menubar>
+  </div>
+</div>
+
+
